@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom, #060b1a, #000000);
+      color: white;
+      text-align: center;
+    }
+    .button {
+      background: linear-gradient(45deg, #d4145a, #fbb03b);
+      border: none;
+      border-radius: 20px;
+      color: white;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button-green {
+      background: linear-gradient(45deg, #0f0, #0c0);
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+      animation: pulse 1.5s infinite;
+      color: black;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #0f0; }
+      50% { box-shadow: 0 0 30px #0f0; }
+      100% { box-shadow: 0 0 10px #0f0; }
+    }
+    .section {
+      padding: 30px 20px;
+    }
+    #signal-display {
+      font-size: 1.5em;
+      color: #00ffcc;
+      margin-top: 20px;
+    }
+    #register-notice {
+      margin-top: 30px;
+      display: none;
+    }
+    .notice-box {
+      background: #1a1a1a;
+      border: 2px solid #00ff00;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+    .notice-box p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+    }
+    .register-btn {
+      background-color: #00ff00;
+      color: black;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h1>ඔබගේ වාරය තවම නැවතීලා නෑ. අදහස් වීමට තවත් තත්පර කිහිපයකි!</h1>
+    <a class="button" href="https://t.me/viratcash_bot" target="_blank">✉️ විරාත්ට ලියන්න</a>
+    <a class="button" href="https://affpa.top/L?tag=d_3712661m_97c_&site=3712661&ad=97&r=registration" target="_blank">🎮 ඇවියේටර් ක්‍රීඩාව</a>
+    <button class="button button-green" onclick="getSignal()">✅ සංඥා ලබාගන්න</button>
+    <div id="signal-display"></div>
+    <div id="register-notice">
+      <div class="notice-box">
+        <p>සම්පුර්ණ සංඥා ප්‍රවේශය ලබාගැනීමට, <b>1xBet</b> වෙබ්අඩවියට ලියාපදිංචි වන්න!</p>
+        <a class="register-btn" href="https://affpa.top/L?tag=d_3712661m_97c_&site=3712661&ad=97&r=registration" target="_blank"><b>1xBet</b> වෙබ්අඩවියට ලියාපදිංචි වන්න</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    let signalGiven = false;
+    function getSignal() {
+      const display = document.getElementById('signal-display');
+      const notice = document.getElementById('register-notice');
+      if (!signalGiven) {
+        const multiplier = (Math.random() * (3 - 1) + 1).toFixed(2);
+        display.textContent = `🚀 නව සංඥාවක් සූදානම්යි: ×${multiplier}`;
+        signalGiven = true;
+      } else {
+        notice.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

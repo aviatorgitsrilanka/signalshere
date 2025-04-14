@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rocket Landing Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -42,8 +43,10 @@
       padding: 30px 20px;
     }
     #signal-display {
-      font-size: 1.5em;
-      color: #00ffcc;
+      font-size: 3em;
+      font-family: 'Bebas Neue', cursive;
+      color: red;
+      text-shadow: 2px 2px 0 black;
       margin-top: 20px;
     }
     #register-notice {
@@ -113,8 +116,8 @@
     <div id="signal-display"></div>
     <div id="register-notice">
       <div class="notice-box">
-        <p>සම්පුර්ණ සංඥා ප්‍රවේශය ලබාගැනීමට, <b>1xBet</b> වෙබ්අඩවියට ලියාපදිංචි වන්න!</p>
-        <a class="register-btn" href="https://affpa.top/L?tag=d_3712661m_97c_&site=3712661&ad=97&r=registration" target="_blank"><b>1xBet</b> වෙබ්අඩවියට ලියාපදිංචි වන්න</a>
+        <p>ඔබට එක සංඥාවක් පමණක් ලැබී ඇත. සම්පූර්ණ ප්‍රවේශය ලබාගැනීමට, මට ලියන්න:</p>
+        <a class="register-btn" href="https://t.me/viratcash_bot" target="_blank">✉️ @viratcash_bot</a>
       </div>
     </div>
   </div>
@@ -162,17 +165,16 @@
   </div>
 
   <script>
-    let signalGiven = false;
+    window.signalGiven = window.signalGiven || false;
 
     function getSignal() {
       const display = document.getElementById('signal-display');
       const notice = document.getElementById('register-notice');
 
-      if (!signalGiven) {
+      if (!window.signalGiven) {
         const multiplier = (Math.random() * (3 - 1) + 1).toFixed(2);
         display.textContent = `🚀 නව සංඥාවක් සූදානම්යි: ×${multiplier}`;
-        signalGiven = true;
-      } else {
+        window.signalGiven = true;
         notice.style.display = 'block';
       }
     }
